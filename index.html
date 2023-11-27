@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/pro.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navegation">
+      <ul>
+        <li class="list active">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-house"></i></span>
+            <span class="text">home</span>
+          </a>
+        </li>
+
+        <li class="list">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-user"></i></span>
+            <span class="text">profile</span>
+          </a>
+        </li>
+
+        <li class="list">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-comment"></i></span>
+            <span class="text">massage</span>
+          </a>
+        </li>
+
+        <li class="list">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-camera"></i></span>
+            <span class="text">phaoto</span>
+          </a>
+        </li>
+
+        <li class="list">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-gear"></i></span>
+            <span class="text">setting</span>
+          </a>
+        </li>
+        <div class="indicator"></div>
+      </ul>
+    </div>
+    <script>
+      let list = document.querySelectorAll(".list");
+      function activeLink() {
+        list.forEach((items) => items.classList.remove("active"));
+        this.classList.add("active");
+      }
+      list.forEach((items) => items.addEventListener("click", activeLink));
+    </script>
+  </body>
+</html>

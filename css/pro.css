@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #111;
+}
+.navegation {
+  background-color: #262626;
+  border-radius: 10px;
+  position: relative;
+  width: 400px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navegation ul {
+  display: flex;
+  list-style: none;
+  position: relative;
+  width: 350px;
+}
+.navegation ul li {
+  /* margin-left:20px ; */
+  position: relative;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.navegation ul li a {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.navegation ul li a .icon {
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.3s;
+  margin-bottom: 5px;
+  position: relative;
+  display: block;
+  line-height: 75px;
+}
+.navegation ul li.active a .icon {
+  color: #29fd53;
+  transform: translatey(-8px);
+}
+
+.navegation ul li a .text {
+  font-weight: 600;
+  font-size: 10px;
+  transition: 0.4s;
+  letter-spacing: 0.05px;
+  position: absolute;
+  opacity: 0;
+  color: #222327;
+  transform: translatey(0px);
+}
+.navegation ul li.active a .text {
+  transform: translatey(13px);
+  opacity: 1;
+}
+.indicator {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}
+.indicator::after {
+  content: "";
+  top: -3px;
+  position: absolute;
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 50%;
+  background-color: #262626;
+  box-shadow: 0 0 0 2px #29fd53, 50px 50px #29fd53, 40px 0px #29fd53,
+    0 40px #29fd53;
+  transform: rotate(45deg);
+  animation: animate 2s ease-in-out infinite;
+}
+@keyframes animate {
+  0%,
+  100% {
+    transform: rotate(35deg);
+  }
+  50% {
+    transform: rotate(55deg);
+  }
+}
+.indicator::before {
+  content: "";
+  position: absolute;
+  bottom: 11px;
+  width: 80%;
+  height: 14px;
+  background-color: #29fd53;
+  border-radius: 10px;
+}
+.navegation ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(calc(70px * 1));
+}
+
+.navegation ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(calc(70px * 2));
+}
+.navegation ul li:nth-child(4).active ~ .indicator {
+  transform: translateX(calc(70px * 3));
+}
+.navegation ul li:nth-child(5).active ~ .indicator {
+  transform: translateX(calc(70px * 4));
+}
